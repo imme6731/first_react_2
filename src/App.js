@@ -3,6 +3,7 @@ import PropsEx from "./components/ex03/PropsEx";
 import IntroEx from "./components/ex04/IntroEx";
 import MapFnEx from "./components/ex04/MapFnEx";
 import SiteEx from "./components/ex04/SiteEx";
+import { Ex05 } from "./components/ex05/Ex05";
 
 const App = () => {
   return (
@@ -18,6 +19,8 @@ const App = () => {
       {/* <IntroEx /> */}
       {/* <SiteEx /> */}
       {/* 4일차 */}
+
+      <Ex05 />
     </>
   );
 };

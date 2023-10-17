@@ -37,3 +37,22 @@
 - 프로젝트명 내가 정하면 됨
 - 새 프로젝트를 진행할때마다 실행
 - > happy hacking 나오면 완료
+
+### jsx문법 ul>li\*5 같은 식 사용할 수 있게 세팅하는 법
+
+- 설정 > workspace 검색 > live server 탭에 root 메뉴의 json 클릭 >
+- "emmet.includeLanguages": {
+  "javascript": "javascriptreact"
+  }, >> 오타없이 입력
+- ex .box>h3\*3
+
+### react styled-components 세팅
+
+- 구글에 styled-components 검색하여 사이트 들어감
+- install 읽고 코드 복사 (npm install styled-components)
+- 터미널에 입력하여 설치
+- 확장 > vscode-styled-components 설치 (자동완성)
+
+### 돌아가고 있는 서버 터미널 종료하기
+
+- ctrl + c 클릭 후 y
