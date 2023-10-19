@@ -56,3 +56,19 @@
 ### 돌아가고 있는 서버 터미널 종료하기
 
 - ctrl + c 클릭 후 y
+
+### styled-Component에 props를 이용하여 배경색 설정
+
+- styled의 배경색에 props 작성
+- 태그 안에 위에 작성한 props명을 작성하여 값 작성
+- ${(props) => props.$bgColor};
+- props명 앞에 $ 기호 넣어주기 (console 오류 안남)
+
+### GlobalStyled 파일에 styled reset 설정
+
+- GlobalStyled 파일 생성 후 npm i styled-reset 설치
+- ${reset} 작성 (reset을 import)
+- 상위 파일에 파일 불러오기
+- 폰트 전체 설정 : html에 링크 연결 후 GlobalStyled 파일의 body 태그에 스타일 적용
+- 기본 padding 값 설정 : GlobalStyled에 객체 생성하여 padding 값 입력 > 해당 컴포넌트의 스타일에 적용
+- styled 태그안에 event 적용 : &:event명{} 작성 (&는 태그 자신을 한번 더 부르기 위해 사용)
