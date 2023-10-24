@@ -140,3 +140,21 @@
 1. window + r 실행 후 cmd 실행
 2. 저장할 파일 경로 지정 (cd 파일주소 엔터)
 3. git clone 저장소 주소 작성후 엔터
+
+## 리액트에서 font awesome 사용하기
+
+- 1. core 설치 : npm i --save @fortawesome/fontawesome-svg-core
+
+- 2. free 설치 :
+     npm i --save @fortawesome/free-solid-svg-icons
+     npm i --save @fortawesome/free-regular-svg-icons
+     npm i --save @fortawesome/free-brands-svg-icons
+
+- 3. 리액트 컴포넌트 설치 :
+     npm i --save @fortawesome/react-fontawesome@latest
+
+- 4. 사용
+  - FontAwesomeIcon 컴포넌트 불러오기 (자동 설치되있음)
+  - 컴포넌트 안에서 사용할 아이콘 이름 불러오기
+  - style 지정 가능
+  - ex) <FontAwesomeIcon icon={faUser} style={{ color: "salmon" }} />
