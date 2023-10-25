@@ -11,6 +11,10 @@ export const fontSize = {
   desc: "16px",
 };
 
+export const color = {
+  musicAppColor: "#1d1d1d",
+};
+
 export const GlobalStyled = createGlobalStyle`
     ${reset}
     body{

@@ -1,20 +1,36 @@
 import { styled } from "styled-components";
 import { Header } from "./Header";
 import { Section } from "./Section";
+import { PlayTime } from "./PlayTime";
+import { color } from "../../../GlobalStyled";
+import { BtnWrap } from "./BtnWrap";
+import { UserCon } from "./UserCon";
 
 const Wrap = styled.div`
-  width: 390px;
-  height: auto;
-  padding: 30px 30px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
   background-color: #555;
-  margin: 100px auto;
-  border-radius: 20px;
+  color: white;
 `;
+const Container = styled.div`
+  max-width: 400px;
+  width: 100%;
+  background-color: ${color.musicAppColor};
+  padding: 50px 20px;
+  position: relative;
+`;
+
 export const MusicApp = () => {
   return (
     <Wrap>
-      <Header />
-      <Section />
+      <Container>
+        <Header />
+        <Section />
+        <PlayTime />
+        <BtnWrap />
+        <UserCon />
+      </Container>
     </Wrap>
   );
 };

@@ -1,27 +1,28 @@
 import { styled } from "styled-components";
 
 const SSection = styled.section`
+  max-width: 300px;
   width: 100%;
-  margin-bottom: 25px;
-  text-align: center;
-  color: white;
+  margin: 50px auto;
 `;
 const AlbumCover = styled.div`
-  width: 85%;
-  height: 350px;
+  height: 320px;
   background: url(${(props) => props.$coverImg}) no-repeat center / cover;
   border-radius: 10%;
-  box-shadow: 0 5px 5px 5px #333;
+  box-shadow: 0 5px 5px 5px #121212;
   margin: 0 auto;
 `;
 const Song = styled.p`
-  margin-top: 20px;
+  text-align: center;
+  margin-top: 30px;
   font-size: 22px;
+  font-weight: 700;
   line-height: 30px;
 `;
 const Singer = styled.p`
+  text-align: center;
   margin-top: 10px;
-  font-size: 18px;
+  font-size: 14px;
   color: lightgray;
 `;
 export const Section = () => {
