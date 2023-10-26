@@ -158,3 +158,30 @@
   - 컴포넌트 안에서 사용할 아이콘 이름 불러오기
   - style 지정 가능
   - ex) <FontAwesomeIcon icon={faUser} style={{ color: "salmon" }} />
+
+## Router
+
+- 경로 설정
+- 설치 : npm i react-router-dom
+- ex
+- <BrowserRouter>(라우터 설정, 브라우저 랄우터, 해쉬 라우터가 있음)
+  <Routes>(라우터 부모)
+  <Route path="경로1" element={컴포넌트1} />(각각 라우터 설정)
+  <Route path="경로2" element={컴포넌트2} />
+  <Route path="/\*" element={404에러 컴포넌트} />
+  </Routes>
+  </BrowserRouter>
+- 링크를 사용할 땐 a 태그가 아닌 Link컴포넌트를 사용함
+- a 태그를 사용하지 않는 이유 : 새로고침되기 때문
+- ex <Link to={`경로`}></Link>
+
+## 웹 title 설정
+
+- 각 페이지 타이틀 정의
+- 설치 : npm i react-helmet
+- Helmet 컴포넌트 불러오고 안에 title 태그 사용
+- ex
+- <Helmet>
+        <title>Home</title>
+      </Helmet>
+- 컴포넌트로 만들어 프롭스 활용 (ex11/components/PageTitle)
