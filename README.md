@@ -185,3 +185,8 @@
         <title>Home</title>
       </Helmet>
 - 컴포넌트로 만들어 프롭스 활용 (ex11/components/PageTitle)
+
+## useParams
+
+- useParams: 라우터에 지정한 변수값을 객체로 얻어옴
+- 비구조화 할당 : 객체 또는 배열형태로 반환하는 값을 변수명에서 바로 접근하여 사용할 수 있음

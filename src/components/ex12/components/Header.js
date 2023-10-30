@@ -33,10 +33,10 @@ export const Header = () => {
 
       <Nav>
         <li>
-          <Link to={"/sub01"}>메뉴1</Link>
+          <Link to={"/sub/0"}>메뉴1</Link>
         </li>
         <li>
-          <Link to={"/sub02"}>메뉴2</Link>
+          <Link to={"/sub/1"}>메뉴2</Link>
         </li>
       </Nav>
     </SHeader>
