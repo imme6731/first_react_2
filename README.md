@@ -190,3 +190,13 @@
 
 - useParams: 라우터에 지정한 변수값을 객체로 얻어옴
 - 비구조화 할당 : 객체 또는 배열형태로 반환하는 값을 변수명에서 바로 접근하여 사용할 수 있음
+
+## form 만들기
+
+- 설치 : react-hook-form 설치 (npm install react-hook-form)
+
+## optional chaining 연산자
+
+- : 연결된 객체 체인 내에 깊숙이 위치한 속성 값을 읽을 수 있음
+- && 연산자로 객체에 접근하는 것보다 옵셔널 체이닝을 이용하여 객체 안에 객체를 쉽게 접근할 수 있음
+- ex) console.log(errors?.username?.message);
