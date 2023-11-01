@@ -1,14 +1,13 @@
 import { useForm } from "react-hook-form";
 import { styled } from "styled-components";
 import { ErrorMsg } from "../components/ErrorMsg";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Wrap = styled.div`
   height: 100vh;
   display: flex;
   justify-content: center;
 `;
-
 const Form = styled.form`
   max-width: 450px;
   width: 100%;
@@ -22,14 +21,12 @@ const Form = styled.form`
   flex-direction: column;
   padding: 30px;
 `;
-
 const Title = styled.h3`
   font-size: 50px;
   font-weight: 700;
   letter-spacing: -2px;
   margin-bottom: 30px;
 `;
-
 const Input = styled.input`
   all: unset;
   box-sizing: border-box;
@@ -40,7 +37,6 @@ const Input = styled.input`
   padding: 0 15px;
   margin-top: 10px;
 `;
-
 const Button = styled.button`
   all: unset;
   width: 100%;
@@ -56,7 +52,7 @@ const Button = styled.button`
   cursor: ${(props) => (props.$isActive ? "pointer" : "default")};
 `;
 
-export const Login = () => {
+export const SignUp = () => {
   const nav = useNavigate();
 
   const {
@@ -65,33 +61,28 @@ export const Login = () => {
     formState: { errors, isValid },
   } = useForm({ mode: "onChange" });
 
-  // console.log(isValid);
-  // => 유효성 검사 후 boolean값으로 반환함
-
-  // console.log(errors && errors.username && errors.username.message);
-
-  // console.log(errors?.username?.message);
-  // => optional chaining 연산자
-  // : 연결된 객체 체인 내에 깊숙이 위치한 속성 값을 읽을 수 있음
-  // && 연산자로 객체에 접근하는 것보다 옵셔널 체이닝을 이용하여 객체 안에 객체를 쉽게 접근할 수 있음
-
-  const loginHandler = (data) => {
-    // 이벤트 함수 매개변수의 첫번째 자리는 유저가 입력한 내용을 객체형태로 반환함
+  const signupHandler = (data) => {
     // console.log(data);
-    nav("/");
+    nav("/login");
   };
 
   return (
     <Wrap>
-      <Form onSubmit={handleSubmit(loginHandler)}>
-        <Title>Login</Title>
+      <Form onSubmit={handleSubmit(signupHandler)}>
+        <Title>Sign Up</Title>
 
         <Input
-          {...register("username", { required: "아이디는 필수입니다." })}
+          {...register("usename", {
+            required: "아이디는 필수입니다.",
+            minLength: {
+              value: 3,
+              message: "3자리 이상 입력해 주세요.",
+            },
+          })}
           type="text"
           placeholder="아이디"
         />
-        <ErrorMsg message={errors?.username?.message} />
+        <ErrorMsg message={errors?.usename?.message} />
         <Input
           {...register("password", {
             required: "패스워드는 필수입니다.",
@@ -105,11 +96,29 @@ export const Login = () => {
             },
           })}
           type="password"
-          placeholder="패스워드"
+          placeholder="비밀번호"
         />
         <ErrorMsg message={errors?.password?.message} />
+        <Input
+          {...register("name", { required: "이름은 필수입니다." })}
+          type="text"
+          placeholder="이름"
+        />
+        <ErrorMsg message={errors?.name?.message} />
+        <Input
+          {...register("email", {
+            required: "이메일은 필수입니다.",
+            pattern: {
+              value: /^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+              message: "잘못된 이메일 형식입니다.",
+            },
+          })}
+          type="email"
+          placeholder="이메일"
+        />
+        <ErrorMsg message={errors?.email?.message} />
 
-        <Button $isActive={isValid}>로그인</Button>
+        <Button $isActive={isValid}>회원가입</Button>
       </Form>
     </Wrap>
   );

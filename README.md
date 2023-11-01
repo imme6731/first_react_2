@@ -191,9 +191,23 @@
 - useParams: 라우터에 지정한 변수값을 객체로 얻어옴
 - 비구조화 할당 : 객체 또는 배열형태로 반환하는 값을 변수명에서 바로 접근하여 사용할 수 있음
 
-## form 만들기
+## form 만들기 (useForm)
 
 - 설치 : react-hook-form 설치 (npm install react-hook-form)
+- 폼 관련 패키지
+- ex)
+- const {
+  register, (input태그 name 및 등록 역할)
+  handleSubmit, (form태그 이벤트 등록)
+  formState:{errors} (form상태를 관리)
+  (errors : form 유효성 검사 후 에러를 객체로 변환함)
+  (isValod : form상태가 유효한지 boolean값으로 변환)
+  } = useForm(
+  mode: "onChange" (form 모드로 유효성 검사를 어떻게 처리할지 값은 작성할 수 있다)
+  );
+  <input {...register(`name명`, {
+  required: "" (현 input값이 필수값인지 아닌지 boolean값 및 문자별로 작성 가능)
+  })}/>
 
 ## optional chaining 연산자
 
