@@ -1,60 +1,8 @@
 import { useForm } from "react-hook-form";
-import { styled } from "styled-components";
 import { ErrorMsg } from "../components/ErrorMsg";
-import { Link, useNavigate } from "react-router-dom";
-
-const Wrap = styled.div`
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-`;
-
-const Form = styled.form`
-  max-width: 450px;
-  width: 100%;
-  height: 550px;
-  border: 1px solid #dbdbdb;
-  margin-top: 18vh;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 30px;
-`;
-
-const Title = styled.h3`
-  font-size: 50px;
-  font-weight: 700;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-`;
-
-const Input = styled.input`
-  all: unset;
-  box-sizing: border-box;
-  width: 100%;
-  height: 50px;
-  border: 1px solid #dbdbdb;
-  border-radius: 10px;
-  padding: 0 15px;
-  margin-top: 10px;
-`;
-
-const Button = styled.button`
-  all: unset;
-  width: 100%;
-  height: 50px;
-  background-color: lightgreen;
-  text-align: center;
-  margin-top: 20px;
-  border-radius: 10px;
-  font-size: 18px;
-  font-weight: 600;
-  color: white;
-  opacity: ${(props) => (props.$isActive ? 1 : 0.5)};
-  cursor: ${(props) => (props.$isActive ? "pointer" : "default")};
-`;
+import { useNavigate } from "react-router-dom";
+import { Wrap, Form, Title, Input } from "../components/loginStyled";
+import { ButtonUi } from "../components/ButtonUi";
 
 export const Login = () => {
   const nav = useNavigate();
@@ -109,7 +57,7 @@ export const Login = () => {
         />
         <ErrorMsg message={errors?.password?.message} />
 
-        <Button $isActive={isValid}>로그인</Button>
+        <ButtonUi active={isValid} text={"로그인"} />
       </Form>
     </Wrap>
   );
